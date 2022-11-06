@@ -9,7 +9,7 @@ import shutil
 
 # global
 raw_data_dir = r"D:\learning\UNNC 科研\202210_CSD超声标注_图片及视频\CSD图片及标注_170例_507张"
-target = r"D:\learning\UNNC 科研\Cervical\Cervical_data"
+target = r"D:\learning\UNNC 科研\Cervical\datasets\Cervical_data"
 if not os.path.exists(target):
     os.mkdir(target)
 
