@@ -10,6 +10,7 @@ import shutil
 datasets = r"D:\learning\UNNC 科研\Cervical\datasets"
 if not os.path.exists(datasets):
     os.mkdir(datasets)
+123
 # global
 raw_data_dir = r"D:\learning\UNNC 科研\202210_CSD超声标注_图片及视频\CSD图片及标注_170例_507张"
 target = r"D:\learning\UNNC 科研\Cervical\datasets\Cervical_data"
