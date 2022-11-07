@@ -28,7 +28,7 @@ if __name__ == '__main__':
     # classes = ["_background_", "aeroplane", "bicycle", "bird", "boat", "bottle", "bus", "car", "cat", "chair",
     # "cow", "diningtable", "dog", "horse", "motorbike", "person", "pottedplant", "sheep", "sofa", "train",
     # "tvmonitor"]
-    classes = ["_background_", "1"]
+    classes = ["_background_", "1"]   123
 
     count = os.listdir("./datasets/" + source + "/")
     for i in range(0, len(count)):
