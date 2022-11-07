@@ -7,9 +7,9 @@ func:   将原始的数据变为单一文件夹下的数据。
 import os
 import shutil
 
-datasets = r"D:\learning\UNNC 科研\Cervical\datasets"
-if not os.path.exists(datasets):
-    os.mkdir(datasets)
+# datasets = r"D:\learning\UNNC 科研\Cervical\datasets"
+# if not os.path.exists(datasets):
+#     os.mkdir(datasets)
 # global
 raw_data_dir = r"D:\learning\UNNC 科研\202210_CSD超声标注_图片及视频\CSD图片及标注_170例_507张"
 target = r"D:\learning\UNNC 科研\Cervical\datasets\Cervical_data"
