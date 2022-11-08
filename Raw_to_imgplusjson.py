@@ -6,6 +6,7 @@ func:   将原始的数据变为单一文件夹下的数据。
 """
 
 import os
+import re
 import shutil
 
 # create datasets folder if not have
@@ -29,11 +30,13 @@ def main():
         # for f in files:
         #     print(os.path.join(root, f))
         # 遍历所有的文件夹
-        for d in dirs:
+        for index, d in enumerate(dirs):
             cur_dir = os.path.join(root, d)
+            # 将原来带中文的给去掉
+            d = re.sub('[\u4e00-\u9fa5]', '', d)
             for cur_file in os.listdir(cur_dir):
                 cur_source = os.path.join(cur_dir, cur_file)
-                cur_target = os.path.join(target, d + '_' + cur_file)
+                cur_target = os.path.join(target, str(index+1)+'_' + d + '_' + cur_file)
                 shutil.copy(cur_source, cur_target)
 
 
