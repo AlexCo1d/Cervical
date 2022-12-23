@@ -62,7 +62,7 @@ if __name__ == "__main__":
     ftest.close()
     print("Generate txt in ImageSets done.")
 
-    print("Check datasets format, this may take a while.")
+    print("Check Medical_Datasets format, this may take a while.")
     print("检查数据集格式是否符合要求，这可能需要一段时间。")
     classes_nums = np.zeros([256], np.int)
     for i in tqdm(list):

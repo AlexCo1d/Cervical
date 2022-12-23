@@ -174,7 +174,7 @@ class EvalCallback():
                 #-------------------------------#
                 #   从文件中读取图像
                 #-------------------------------#
-                image_path  = os.path.join(self.dataset_path, "VOC2007/JPEGImages/"+image_id+".jpg")
+                image_path  = os.path.join(self.dataset_path, "VOC2007/Images/"+image_id+".jpg")
                 image       = Image.open(image_path)
                 #------------------------------#
                 #   获得预测txt

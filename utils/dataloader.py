@@ -29,7 +29,7 @@ class UnetDataset(Dataset):
         #-------------------------------#
         #   从文件中读取图像
         #-------------------------------#
-        jpg         = Image.open(os.path.join(os.path.join(self.dataset_path, "VOC2007/JPEGImages"), name + ".jpg"))
+        jpg         = Image.open(os.path.join(os.path.join(self.dataset_path, "VOC2007/Images"), name + ".jpg"))
         png         = Image.open(os.path.join(os.path.join(self.dataset_path, "VOC2007/SegmentationClass"), name + ".png"))
         #-------------------------------#
         #   数据增强

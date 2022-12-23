@@ -205,7 +205,7 @@ if __name__ == "__main__":
     #------------------------------#
     #   数据集路径
     #------------------------------#
-    VOCdevkit_path  = 'Medical_Datasets'
+    VOCdevkit_path  = '/home/yangjiaqi/Desk/Cervical/Medical_Datasets'
     #------------------------------------------------------------------#
     #   建议选项：
     #   种类少（几类）时，设置为True

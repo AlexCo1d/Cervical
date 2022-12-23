@@ -18,8 +18,8 @@ from labelme import utils
 '''
 if __name__ == '__main__':
     # global
-    jpgs_path = "datasets/JPEGImages"
-    pngs_path = "datasets/SegmentationClass"
+    jpgs_path = "Medical_Datasets/Images"
+    pngs_path = "Medical_Datasets/SegmentationClass"
     source = "Cervical_data"
     if not os.path.exists(jpgs_path):
         os.mkdir(jpgs_path)
@@ -30,9 +30,9 @@ if __name__ == '__main__':
     # "tvmonitor"]
     classes = ["_background_", "1"]
 
-    count = os.listdir("./datasets/" + source + "/")
+    count = os.listdir("./Medical_Datasets/" + source + "/")
     for i in range(0, len(count)):
-        path = os.path.join("./datasets/" + source, count[i])
+        path = os.path.join("./Medical_Datasets/" + source, count[i])
 
         if os.path.isfile(path) and path.endswith('json'):
             data = json.load(open(path))

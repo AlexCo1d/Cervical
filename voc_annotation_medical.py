@@ -15,7 +15,7 @@ VOCdevkit_path  = 'Medical_Datasets'
 if __name__ == "__main__":
     random.seed(0)
     print("Generate txt in ImageSets.")
-    segfilepath     = os.path.join(VOCdevkit_path, 'Labels')
+    segfilepath     = os.path.join(VOCdevkit_path, 'SegmentationClass')
     saveBasePath    = os.path.join(VOCdevkit_path, 'ImageSets/Segmentation')
     
     temp_seg = os.listdir(segfilepath)

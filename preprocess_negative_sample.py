@@ -10,9 +10,9 @@ import shutil
 import numpy as np
 
 # global
-source = "datasets/Cervical_data"
-JPEGImages = "datasets/JPEGImages"
-SegmentationClass = "datasets/SegmentationClass"
+source = "Medical_Datasets/Cervical_data"
+JPEGImages = "Medical_Datasets/Images"
+SegmentationClass = "Medical_Datasets/SegmentationClass"
 
 if __name__ == '__main__':
     for cur in os.listdir(source):

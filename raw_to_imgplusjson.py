@@ -9,14 +9,14 @@ import os
 import re
 import shutil
 
-# create datasets folder if not have
-datasets = r"D:\learning\UNNC 科研\Cervical\datasets"
+# create Medical_Datasets folder if not have
+datasets = r"D:\宁波诺丁汉\宫颈\Cervical\datasets"
 if not os.path.exists(datasets):
     os.mkdir(datasets)
 
 # global
-raw_data_dir = r"D:\learning\UNNC 科研\202210_CSD超声标注_图片及视频\CSD图片及标注_170例_507张"
-target = r"D:\learning\UNNC 科研\Cervical\datasets\Cervical_data"
+raw_data_dir = r"D:\宁波诺丁汉\宫颈\202210_CSD超声标注_图片及视频\CSD图片及标注_170例_507张"
+target = r"D:\宁波诺丁汉\宫颈\Cervical\datasets\Cervical_data"
 if not os.path.exists(target):
     os.mkdir(target)
 

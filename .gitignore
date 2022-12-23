@@ -1,11 +1,11 @@
 <<<<<<< HEAD
 ### Python template
 =======
-# ignore map, miou, datasets
+# ignore map, miou, Medical_Datasets
 map_out/
 miou_out/
 VOCdevkit/
-datasets/
+Medical_Datasets/
 Medical_Datasets/
 lfw/
 logs/
