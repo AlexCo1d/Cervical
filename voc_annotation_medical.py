@@ -15,7 +15,7 @@ VOCdevkit_path  = 'Medical_Datasets'
 if __name__ == "__main__":
     random.seed(0)
     print("Generate txt in ImageSets.")
-    segfilepath     = os.path.join(VOCdevkit_path, 'SegmentationClass')
+    segfilepath     = os.path.join(VOCdevkit_path, 'segmentation')
     saveBasePath    = os.path.join(VOCdevkit_path, 'ImageSets/Segmentation')
     
     temp_seg = os.listdir(segfilepath)
@@ -34,9 +34,9 @@ if __name__ == "__main__":
     print("train and val size",tv)
     print("traub suze",tr)
     ftrainval   = open(os.path.join(saveBasePath,'trainval.txt'), 'w')  
-    ftest       = open(os.path.join(saveBasePath,'test.txt'), 'w')  
+    # ftest       = open(os.path.join(saveBasePath,'test.txt'), 'w')
     ftrain      = open(os.path.join(saveBasePath,'train.txt'), 'w')  
-    fval        = open(os.path.join(saveBasePath,'val.txt'), 'w')  
+    # fval        = open(os.path.join(saveBasePath,'val.txt'), 'w')
     
     for i  in list:  
         name=total_seg[i][:-4]+'\n'  
@@ -51,6 +51,6 @@ if __name__ == "__main__":
     
     ftrainval.close()  
     ftrain.close()  
-    fval.close()  
-    ftest.close()
+    # fval.close()
+    # ftest.close()
     print("Generate txt in ImageSets done.")

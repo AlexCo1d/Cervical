@@ -18,8 +18,8 @@ from labelme import utils
 '''
 if __name__ == '__main__':
     # global
-    jpgs_path = "Medical_Datasets/Images"
-    pngs_path = "Medical_Datasets/SegmentationClass"
+    jpgs_path = "Medical_Datasets/images"
+    pngs_path = "Medical_Datasets/segmentation"
     source = "Cervical_data"
     if not os.path.exists(jpgs_path):
         os.mkdir(jpgs_path)
