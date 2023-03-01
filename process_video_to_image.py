@@ -44,7 +44,7 @@ imgPath_img,imgPath_mask: 输出的文件
 
 
 def process_video(cur_dir, avi_video, imgPath_img, imgPath_mask):
-    extract_avi_frame(cur_dir, avi_video, imgPath_img)
+    #extract_avi_frame(cur_dir, avi_video, imgPath_img)
     extract_tar(cur_dir, avi_video, imgPath_mask)
 
 
@@ -99,10 +99,13 @@ def extract_tar(cur_dir, avi_video, imgPath_mask):
 def slice_nii(nii, avi_video, imgPath_mask):
     niifile = nib.load(nii)
     img = niifile.get_fdata()
+    print(np.unique(img))
     img = process_img(img)
+
     for i in range(img.shape[2]):
-        save_path = os.path.join(imgPath_mask, avi_video + "_%04d.png" % (i + 1)).replace("\\", "/")
+        save_path = os.path.join(imgPath_mask, avi_video.lower().replace(".avi", "") + "_%04d.png" % (i + 1)).replace("\\", "/")
         cv2.imencode('.png', img[:, :, i])[1].tofile(save_path)
+        #print(np.unique(img[:,:,i]))
 
 
 """
