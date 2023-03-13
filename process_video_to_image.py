@@ -44,8 +44,8 @@ imgPath_img,imgPath_mask: 输出的文件
 
 
 def process_video(cur_dir, avi_video, imgPath_img, imgPath_mask):
-    extract_avi_frame(cur_dir, avi_video, imgPath_img)
-    #extract_tar(cur_dir, avi_video, imgPath_mask)
+    #extract_avi_frame(cur_dir, avi_video, imgPath_img)
+    extract_tar(cur_dir, avi_video, imgPath_mask)
 
 
 '''
