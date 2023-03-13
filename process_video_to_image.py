@@ -8,7 +8,7 @@ import nibabel as nib
 import numpy as np
 
 # 设定图片中癌变细胞像素的数值大小
-set_value = 1
+set_value = 128
 
 
 # 提取所有的视频文件，并调用函数
@@ -16,8 +16,8 @@ def main():
     ####################
     # 设置读取路径与输出路径##
     ####################
-    videoPath = r"D:\learning\UNNC 科研\202210_CSD超声标注_图片及视频\CSD视频及标注_15例"  # 读取视频路径
-    imgPath = r"D:\learning\UNNC 科研\202210_CSD超声标注_图片及视频\video_image"  # 保存图片路径
+    videoPath = r"/home/yangjiaqi/下载/CSD视频及标注_15例"  # 读取视频路径
+    imgPath = r"/home/yangjiaqi/下载/CSD视频及标注_15例/video_image"  # 保存图片路径
     imgPath_img = os.path.join(imgPath, "img")
     imgPath_mask = os.path.join(imgPath, "mask")
     if not os.path.exists(imgPath):
@@ -44,8 +44,8 @@ imgPath_img,imgPath_mask: 输出的文件
 
 
 def process_video(cur_dir, avi_video, imgPath_img, imgPath_mask):
-    #extract_avi_frame(cur_dir, avi_video, imgPath_img)
-    extract_tar(cur_dir, avi_video, imgPath_mask)
+    extract_avi_frame(cur_dir, avi_video, imgPath_img)
+    #extract_tar(cur_dir, avi_video, imgPath_mask)
 
 
 '''
@@ -65,8 +65,7 @@ def extract_avi_frame(cur_dir, avi_video, imgPath_img):
         suc, frame = cap.read()
         if suc:
             save_path = os.path.join(imgPath_img,
-                                     avi_video.lower().replace(".avi", "") + "_%04d.jpg" % frame_count).replace("\\",
-                                                                                                                "/")
+                                     avi_video.lower().replace(".avi", "") + "_%04d.jpg" % frame_count)
             cv2.imencode('.jpg', frame)[1].tofile(save_path)
             frame_count += 1
         else:
@@ -80,8 +79,8 @@ def extract_avi_frame(cur_dir, avi_video, imgPath_img):
 
 
 def extract_tar(cur_dir, avi_video, imgPath_mask):
-    tar_path = os.path.join(cur_dir, avi_video.lower().replace(".avi", "_avi_Label.tar"))
-    nii = os.path.join(cur_dir, avi_video.lower().replace(".avi", "_avi_Label.nii.gz"))
+    tar_path = os.path.join(cur_dir, avi_video.replace(".avi", "_avi_Label.tar").replace(".AVI", "_AVI_Label.tar"))
+    nii = os.path.join(cur_dir, avi_video.replace(".avi", "_avi_Label.nii.gz").replace(".AVI", "_AVI_Label.nii.gz"))
     with tarfile.open(tar_path, 'r') as t:
         t.extractall(path=cur_dir)
         slice_nii(nii, avi_video, imgPath_mask)
@@ -104,7 +103,7 @@ def slice_nii(nii, avi_video, imgPath_mask):
 
     for i in range(img.shape[2]):
         save_path = os.path.join(imgPath_mask, avi_video.lower().replace(".avi", "") + "_%04d.png" % (i + 1)).replace("\\", "/")
-        cv2.imencode('.png', img[:, :, i])[1].tofile(save_path)
+        cv2.imencode('.png', img[:, :, i].T)[1].tofile(save_path)
         #print(np.unique(img[:,:,i]))
 
 
